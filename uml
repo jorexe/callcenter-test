@@ -1,0 +1,27 @@
+@startuml
+'Generated using http://www.plantuml.com/plantuml
+
+class Dispatcher {
+	PriorityQueue<Employee> employees
+	PriorityQueue<Calls> pendingCalls
+
+    void addEmployee()
+    void addCall()
+    void endCall()
+    void waitUntilEnd()
+}
+
+class Call {
+	int id
+}
+
+class Employee {
+	int id
+	Dispatcher dispatcher
+	EmployeeType employeeType
+	Call call
+
+	void pickUpCall(Call call)
+	void hangUpCall()
+}
+@enduml
